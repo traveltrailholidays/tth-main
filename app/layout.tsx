@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import '@/styles/globals.css';
+import Header from '@/components/custom/Header';
+import FooterBar from '@/components/custom/FooterBar';
+import Footer from '@/components/custom/Footer';
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 
 const poppins = Poppins({
@@ -27,7 +30,10 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${poppins.className}`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange >
+        <Header/>
           {children}
+        <FooterBar/>
+        <Footer/>
         </ThemeProvider>
       </body>
     </html>

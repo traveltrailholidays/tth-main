@@ -18,20 +18,15 @@ const Navlink = ({ href, exact = false, children, className = '', ...props }: Na
     const isActive = exact ? pathname === href : pathname.startsWith(href);
 
     // Use template literals for clarity and safety
-    className += ` ${isActive ? 'text-[#FF5956]' : 'text-gray-800 dark:text-gray-400'}`;
+    className += `${isActive ? 'text-[#FF5956]' : 'text-gray-800 dark:text-gray-400 hover:text-[#FF5956] dark:hover:text-[#FF5956]'}`;
 
     return (
-        <Link href={href} className={className} {...props}>
-            
-            {children}
-            
+        <Link href={href} className={className}>
+            <div {...props}>
+                {children}
+            </div>
         </Link>
     );
 }
-
-// Remove PropTypes in favor of TypeScript types
-Navlink.defaultProps = {
-    exact: false
-};
 
 export default Navlink;

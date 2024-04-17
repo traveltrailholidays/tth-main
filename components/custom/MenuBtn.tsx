@@ -1,11 +1,10 @@
-'use client'
+'use client';
 
 import { ThemeToggle } from '../theme/ThemeToggler';
 import { UserRegular, DarkModeSolid, HelpSolid } from '@/assets/svgs/uiSvg';
 
 import { MenuSolid, UserSolid } from '@/assets/svgs/uiSvg';
 import { useState } from 'react';
-import styles from '@/styles/Style.module.scss';
 
 const MenuBtn = () => {
 
@@ -32,7 +31,7 @@ const MenuBtn = () => {
         </div>
 
         <div 
-            className={`${isMenuVisible ? styles.menu_visible : styles.menu_hidden} flex absolute top-[3.7rem] md:top-[3.8rem] right-0 rounded-xl bg-light_bg dark:bg-dark_bg shadow-light_all_sides dark:shadow-dark_all_sides py-3 w-full max-w-[200px]`}
+            className={`${isMenuVisible ? 'flex' : 'hidden'} flex absolute top-[3.7rem] md:top-[3.8rem] right-0 rounded-xl bg-light_bg dark:bg-dark_bg shadow-light_all_sides dark:shadow-dark_all_sides py-3 w-full max-w-[200px]`}
         >
             
             <div 

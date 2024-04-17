@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { SearchSolid, HomeRegular, HeartRegular, UserRegular } from '@/assets/svgs/uiSvg';
+import { SearchSolid, HomeRegular, HeartRegular } from '@/assets/svgs/uiSvg';
 import styles from '@/styles/Style.module.scss';
 
 const FooterBar = () => {
