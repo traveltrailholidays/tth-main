@@ -6,6 +6,7 @@ import Image from 'next/image';
 import logo from '@/assets/images/logo.png';
 import styles from '@/styles/Style.module.scss';
 import MenuBtn from './MenuBtn';
+import Navlink from "@/components/feature/Navlink";
 
 
 const Header = () => {
@@ -23,9 +24,22 @@ const Header = () => {
         </Link>
 
         <div
-          className={``}
+          className={`flex items-center gap-10`}
         >
-          
+          <div className={`gap-5 items-center hidden md:flex font-[500]`}>
+            <Navlink href="/" exact  className={``}>
+              <span>Home</span>
+            </Navlink>
+            <Navlink href="/about" exact  className={``}>
+              <span>About</span>
+            </Navlink>
+            <Navlink href="/contact" exact  className={``}>
+              <span>Contact</span>
+            </Navlink>
+            <Navlink href="/payments" exact  className={``}>
+              <span>Payments</span>
+            </Navlink>
+          </div>
           <MenuBtn/>
         </div>  
             
