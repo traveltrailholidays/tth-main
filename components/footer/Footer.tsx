@@ -5,7 +5,7 @@ import Image from "next/image";
 import logo from '@/assets/images/logo.png';
 import { FacebookSolid, XRegular, InstagramRegular, LinkedinSolid } from "@/assets/svgs/socialSvg";
 import { ArrowRightSolid, LocationSolid, MessageSolid, DialerSolid } from "@/assets/svgs/uiSvg";
-import Navlink from "@/components/feature/Navlink";
+import Navlink from "@/components/feature/ActiveLink";
 
 
 const Footer = () => {

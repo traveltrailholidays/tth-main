@@ -1,7 +1,12 @@
-import React from 'react'
+
+import ContactHeroSection from '@/components/contact/ContactHeroSection';
+import ContactPage from '@/components/contact/ContactPage';
 
 export default function page() {
   return (
-    <div>Contact</div>
+    <section>
+      <ContactHeroSection/>
+      <ContactPage/>
+    </section>
   )
 }

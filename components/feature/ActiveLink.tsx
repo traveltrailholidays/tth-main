@@ -11,7 +11,7 @@ interface NavLinkProps {
     className?: string;
 }
 
-const Navlink = ({ href, exact = false, children, className = '', ...props }: NavLinkProps) => {
+const ActiveLink = ({ href, exact = false, children, className = '', ...props }: NavLinkProps) => {
     const pathname = usePathname();
 
     // Determine if the link is active
@@ -29,4 +29,4 @@ const Navlink = ({ href, exact = false, children, className = '', ...props }: Na
     );
 }
 
-export default Navlink;
+export default ActiveLink;

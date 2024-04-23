@@ -1,6 +1,6 @@
 import React from 'react';
-import HeroSection from '@/components/custom/HeroSection';
-import ExploreDestination from '@/components/custom/ExploreDestination';
+import HeroSection from '@/components/home/HeroSection';
+import ExploreDestination from '@/components/home/ExploreDestination';
 
 const Home = () => {
   return (

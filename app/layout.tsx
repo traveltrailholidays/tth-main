@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import '@/styles/globals.css';
-import Header from '@/components/custom/Header';
-import FooterBar from '@/components/custom/FooterBar';
-import Footer from '@/components/custom/Footer';
+import Header from '@/components/navbar/Header';
+import FooterBar from '@/components/footer/FooterBar';
+import Footer from '@/components/footer/Footer';
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
+import ClientOnly from "@/components/feature/ClientOnly";
+import Modal from "@/components/modals/Modal";
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -30,10 +32,12 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${poppins.className}`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange >
-        <Header/>
-          {children}
-        <FooterBar/>
-        <Footer/>
+          {/* <ClientOnly> */}
+            <Header/>
+          {/* </ClientOnly> */}
+            {children}
+          <FooterBar/>
+          <Footer/>
         </ThemeProvider>
       </body>
     </html>

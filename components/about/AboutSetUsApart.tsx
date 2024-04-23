@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function AboutSetUsApart() {
   return (
-    <section className={`w-full flex justify-center bg-slate-50 dark:bg-[#101010] mt-10`}>
+    <section className={`w-full flex justify-center bg-light_secondBg dark:bg-[#101010] mt-10`}>
       <div className={`max_container_width px-5 py-10`}>
         <div>
           <span className={`text-xl font-semibold sm:text-2xl md:text-3xl lg:text-4xl`}>What Sets Us Apart</span>

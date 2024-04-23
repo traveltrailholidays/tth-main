@@ -1,7 +1,7 @@
 import Image from "next/image";
 import hero_bg from "@/assets/images/hero_bg.png";
 import styles from "@/styles/Style.module.scss";
-import SearchBar from '@/components/custom/SearchBar';
+import SearchBar from '@/components/home/SearchBar';
 import { CalenderRegular, LocationSolid, DurationSolid } from '@/assets/svgs/uiSvg';
 
 const HeroSection = () => {

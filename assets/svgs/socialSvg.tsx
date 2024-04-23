@@ -1,3 +1,5 @@
+'use client';
+
 interface IconProps {
   width?: string;
   fillColor?: string;

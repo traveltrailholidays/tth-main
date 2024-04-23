@@ -32,8 +32,8 @@ const config = {
       colors: {
         "light_bg":"#fff",
         "dark_bg":"#09090B",
-        "light_secondBg": "#FAF5EE",
-        "dark_secondBg": "#000",
+        "light_secondBg": "#f8f8f8",
+        "dark_secondBg": "#191919",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
