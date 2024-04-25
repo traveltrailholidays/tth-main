@@ -2,11 +2,9 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import '@/styles/globals.css';
 import Header from '@/components/navbar/Header';
-import FooterBar from '@/components/footer/FooterBar';
+// import FooterBar from '@/components/footer/FooterBar';
 import Footer from '@/components/footer/Footer';
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
-import ClientOnly from "@/components/feature/ClientOnly";
-import Modal from "@/components/modals/Modal";
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -32,11 +30,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${poppins.className}`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange >
-          {/* <ClientOnly> */}
-            <Header/>
-          {/* </ClientOnly> */}
-            {children}
-          <FooterBar/>
+          <Header/>
+          {children}
+          {/* <FooterBar/> */}
           <Footer/>
         </ThemeProvider>
       </body>

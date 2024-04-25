@@ -202,8 +202,8 @@ const Footer = () => {
                   <div>
                     <MessageSolid height="1rem" width="1rem" fillColor="#cbd5e0" strokeWidth="0" strokeColor="currentColor"/>
                   </div>
-                  <Navlink href="mailto:info@traveltrailholidays.com" exact className={`flex w-full`}>
-                    <div>info@traveltrailholidays.com</div>
+                  <Navlink href="mailto:support@traveltrailholidays.com" exact className={`flex w-full`}>
+                    <div>support@traveltrailholidays.com</div>
                   </Navlink>
                 </div>
                 <div className="flex  gap-2">
@@ -220,7 +220,7 @@ const Footer = () => {
 
         <div className="w-full h-[0.1px] bg-gray-200 dark:bg-gray-800"></div>
 
-        <div className={`pt-5 w-full flex justify-between md:pb-5 mb-20 md:mb-0 flex-col text-center md:flex-row items-center gap-2`}>
+        <div className={`pt-5 w-full flex justify-between md:pb-5 mb-5 md:mb-0 flex-col text-center md:flex-row items-center gap-2`}>
           <span className={``}>Copyright © 2024 <Link href={`/`} className={`hover:underline`}>Travel Trail Holidays</Link>. All Rights Reserved.</span>
           <span className={``}>
             <span>Designed with <span className={`${styles.text_primary} text-lg select-none`}>&#x2665;</span> by <Link href={diwakarjha!} target="_blank" className={`${styles.text_primary} hover:underline`}>iamdkjha</Link>.</span>
@@ -232,4 +232,4 @@ const Footer = () => {
   );
 }
 
-export default Footer
+export default Footer;
