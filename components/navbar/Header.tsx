@@ -1,31 +1,32 @@
-'use client'
+"use client";
 
-import Logo from '@/components/navbar/Logo';
-import Navlink from '@/components/navbar/Navlink';
-import MenuBtn from '@/components/navbar/MenuBtn';
-
+import Logo from "@/components/navbar/Logo";
+import Navlink from "@/components/navbar/Navlink";
+import MenuBtn from "@/components/navbar/MenuBtn";
+import Container from "@/components/ui/feature/Container";
+import Section from "@/components/ui/feature/Section";
 
 const Header = () => {
   return (
-    <section 
-      className='bg-light_bg dark:bg-dark_bg fixed top-0 z-40 w-full flex justify-center items-center shadow-light_all_sides dark:shadow-dark_all_sides h-20'
-    >
-      <div 
-        className='max_container_width flex justify-between items-center relative'
-      >
-            
-        <Logo/>
+    <Section classes="fixed top-0 z-40">
+      <div className={`py-4 border-b-[1px]`}>
+        <Container classes="lg:relative">
+          <div
+            className={`
+              flex flex-row items-center justify-between gap-3 lg:gap-0
+            `}
+          >
+            <Logo />
 
-        <div
-          className={`flex items-center gap-10`}
-        >
-          <Navlink/>
-          <MenuBtn/>
-        </div>  
-            
+            <div className={`flex items-center gap-10`}>
+              <Navlink />
+              <MenuBtn />
+            </div>
+          </div>
+        </Container>
       </div>
-    </section>
-  )
-}
+    </Section>
+  );
+};
 
 export default Header;

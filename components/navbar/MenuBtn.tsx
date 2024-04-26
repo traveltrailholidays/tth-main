@@ -1,10 +1,13 @@
 'use client';
 
-import { ThemeToggle } from '../theme/ThemeToggler';
+import { ThemeToggle } from '@/components/ui/theme/ThemeToggler';
 import { UserRegular, DarkModeSolid, HelpSolid } from '@/assets/svgs/uiSvg';
 
 import { MenuSolid, UserSolid } from '@/assets/svgs/uiSvg';
 import { useCallback, useState } from 'react';
+import MenuItem from '@/components/navbar/MenuItem';
+
+
 
 const MenuBtn = () => {
 
@@ -17,47 +20,61 @@ const MenuBtn = () => {
   return (
     <>
         <div 
-            className={`${isMenuVisible ? "md:shadow-md" : ""} border-[0.125rem] border-gray-600 rounded-full hover:cursor-pointer p-1 md:flex items-center gap-3 md:p-2 md:hover:shadow-md md:border-[0.05] md:dark:border-[0.15rem] md:border-gray-300 md:dark:border-gray-600`} 
+            className={`${isMenuVisible ? "lg:shadow-lg" : ""} border-[0.125rem]  rounded-full cursor-pointer p-1 lg:flex items-center gap-3 lg:p-2 lg:hover:shadow-lg border-gray-600 lg:border-gray-300 dark:border-gray-600`} 
             
             onClick={toggleMenu}
         >
               
             <MenuSolid height="1.7rem" width="1.7rem" fillColor="#4b5563" strokeWidth="0" strokeColor="currentColor"/>
               
-            <div className='hidden md:flex'>
+            <div className='hidden lg:flex'>
                 <UserSolid height="1.7rem" width="1.7rem" fillColor="#4b5563" strokeWidth="0" strokeColor="currentColor"/>
             </div>
         
         </div>
 
         {isMenuVisible && (
-            <div 
-                className={`flex absolute top-[3.7rem] md:top-[3.8rem] right-0 rounded-xl bg-light_bg dark:bg-dark_bg shadow-light_all_sides dark:shadow-dark_all_sides py-3 w-full max-w-[200px]`}
-            >
+            <div
+                className={`flex absolute lg:top-[3.5rem] left-0 lg:left-auto lg:right-20 lg:rounded-xl bg-light_bg dark:bg-dark_bg shadow-light_all_sides dark:shadow-dark_all_sides lg:py-3 w-full lg:max-w-[200px] text-white lg:text-black lg:dark:text-white backdrop-blur-lg z-50 h-screen lg:h-auto top-0`}
+            >   
             
                 <div 
-                    className='w-full flex flex-col items-center gap-3 justify-center'
+                    className='w-full flex flex-col items-center gap-3 justify-center p-5 lg:p-0'
                 >
 
                     <div 
-                        className='px-3 w-[90%] bg-light_bg dark:bg-dark_bg shadow-light_all_sides dark:shadow-dark_all_sides rounded-xl py-2 flex items-center justify-between hover:cursor-pointer'
+                        className='px-3 w-[90%] shadow-light_all_sides dark:shadow-dark_all_sides rounded-xl py-3 flex items-center justify-between hover:cursor-pointer'
                     >
                         <div 
                             className='flex items-center gap-2'
                         >
                             <UserRegular height="1.7rem" width="1.7rem" fillColor="#4b5563" strokeWidth="0" strokeColor="currentColor"/>
-                            <span className='text-sm md:text-base font-[500]'>Account</span>
+                            <span className='text-sm lg:text-base font-[500]'>Account</span>
                         </div>
                     </div>
 
                     <div 
-                        className='w-[90%] bg-light_bg dark:bg-dark_bg py-2 flex items-center justify-between hover:cursor-pointer'
+                        className={`w-full flex flex-col items-center gap-3 justify-center lg:hidden`}
+                    >
+                        <MenuItem onClickFunctions={[toggleMenu]} icon={<HelpSolid height="1.7rem" width="1.7rem" fillColor="#4b5563" strokeWidth="0" strokeColor="currentColor" />} label="Home" href="/" />
+
+                        <MenuItem onClickFunctions={[toggleMenu]} icon={<HelpSolid height="1.7rem" width="1.7rem" fillColor="#4b5563" strokeWidth="0" strokeColor="currentColor" />} label="Packages" href="/packages" />
+
+                        <MenuItem onClickFunctions={[toggleMenu]} icon={<HelpSolid height="1.7rem" width="1.7rem" fillColor="#4b5563" strokeWidth="0" strokeColor="currentColor" />} label="About" href="/about" />
+
+                        <MenuItem onClickFunctions={[toggleMenu]} icon={<HelpSolid height="1.7rem" width="1.7rem" fillColor="#4b5563" strokeWidth="0" strokeColor="currentColor" />} label="Contact" href="/contact" />
+
+                        <MenuItem onClickFunctions={[toggleMenu]} icon={<HelpSolid height="1.7rem" width="1.7rem" fillColor="#4b5563" strokeWidth="0" strokeColor="currentColor" />} label="Payments" href="/payments" />
+                    </div>
+
+                    <div 
+                        className='w-full px-4 py-2 flex items-center justify-between hover:cursor-pointer'
                     >
                         <div 
                             className='flex items-center gap-2'
                         >
                             <DarkModeSolid height="1.7rem" width="1.7rem" fillColor="#4b5563" strokeWidth="0" strokeColor="currentColor"/>
-                            <span className='text-sm md:text-base font-[500]'>Theme</span>
+                            <span className='text-sm lg:text-base font-[500]'>Theme</span>
                         </div>
 
                         <ThemeToggle/>
@@ -65,14 +82,9 @@ const MenuBtn = () => {
                     </div>
 
                     <div 
-                        className='w-[90%] bg-light_bg dark:bg-dark_bg py-2 flex items-center justify-between hover:cursor-pointer'
+                        className={`w-full flex flex-col items-center gap-3 justify-center`}
                     >
-                        <div 
-                            className='flex items-center gap-2'
-                        >
-                            <HelpSolid height="1.7rem" width="1.7rem" fillColor="#4b5563" strokeWidth="0" strokeColor="currentColor"/>
-                            <span className='text-sm md:text-base font-[500]'>Help Centre</span>
-                        </div>
+                        <MenuItem onClickFunctions={[toggleMenu]} icon={<HelpSolid height="1.7rem" width="1.7rem" fillColor="#4b5563" strokeWidth="0" strokeColor="currentColor" />} label="Help Center" href="/help-center" />
                     </div>
 
                 </div>
@@ -83,4 +95,4 @@ const MenuBtn = () => {
   )
 }
 
-export default MenuBtn
+export default MenuBtn;

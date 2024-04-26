@@ -5,7 +5,9 @@ import Image from "next/image";
 import logo from '@/assets/images/logo.png';
 import { FacebookSolid, XRegular, InstagramRegular, LinkedinSolid } from "@/assets/svgs/socialSvg";
 import { ArrowRightSolid, LocationSolid, MessageSolid, DialerSolid } from "@/assets/svgs/uiSvg";
-import Navlink from "@/components/feature/ActiveLink";
+import Navlink from "@/components/ui/feature/ActiveLink";
+import Section from "@/components/ui/feature/Section";
+import Container from "@/components/ui/feature/Container";
 
 
 const Footer = () => {
@@ -13,13 +15,13 @@ const Footer = () => {
   const diwakarjha = process.env.DIWAKAR_JHA_LINK;
 
   return (
-    <section
-      className={`w-full flex justify-center items-center shadow-light_all_sides dark:shadow-dark_all_sides py-0`}
+    <Section
+      classes={`border-t-[1px]`}
     >
-      <div
-        className={`max_container_width flex justify-between items-center relative flex-col`}
+      <Container
+        classes={`flex justify-between items-center relative flex-col`}
       >
-        <div className={`flex justify-between items-center w-full pt-10 pb-5 flex-col gap-5 md:flex-row`}>
+        <div className={`flex justify-between items-center w-full pt-10 pb-5 flex-col gap-5 md:flex-row border-b-[1px]`}>
           <Link href="/" className="flex items-center select-none gap-3">
             <Image src={logo} alt="logo" priority className={`w-10 md:w-12`} />
             <span className={`${styles.text_primary} font-[500] text-2xl`}>
@@ -87,9 +89,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="w-full h-[0.1px] bg-gray-200 dark:bg-gray-800"></div>
-
-        <div className={`w-[95%] flex justify-between pt-10 pb-5 flex-wrap gap-10 `}>
+        <div className={`w-[95%] flex justify-between pt-10 pb-5 flex-wrap gap-10`}>
           <div className={`max-w-[410px]`}>
             <div className={``}>
               <span className={`text-xl font-[500]`}>Quick Links</span>
@@ -99,6 +99,12 @@ const Footer = () => {
                   <ArrowRightSolid height="0.7rem" width="0.7rem" fillColor="#cbd5e0" strokeWidth="0" strokeColor="currentColor"/>
                   <Navlink href="/" exact  className={``}>
                     <span>Home</span>
+                  </Navlink>
+                </div>
+                <div className="flex items-center gap-1">
+                  <ArrowRightSolid height="0.7rem" width="0.7rem" fillColor="#cbd5e0" strokeWidth="0" strokeColor="currentColor"/>
+                  <Navlink href="/packages" exact  className={``}>
+                    <span>Packages</span>
                   </Navlink>
                 </div>
                 <div className="flex items-center gap-1">
@@ -218,17 +224,15 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="w-full h-[0.1px] bg-gray-200 dark:bg-gray-800"></div>
-
-        <div className={`pt-5 w-full flex justify-between md:pb-5 mb-5 md:mb-0 flex-col text-center md:flex-row items-center gap-2`}>
+        <div className={`pt-5 w-full flex justify-between md:pb-5 mb-5 md:mb-0 flex-col text-center md:flex-row items-center gap-2 border-t-[1px]`}>
           <span className={``}>Copyright © 2024 <Link href={`/`} className={`hover:underline`}>Travel Trail Holidays</Link>. All Rights Reserved.</span>
           <span className={``}>
             <span>Designed with <span className={`${styles.text_primary} text-lg select-none`}>&#x2665;</span> by <Link href={diwakarjha!} target="_blank" className={`${styles.text_primary} hover:underline`}>iamdkjha</Link>.</span>
           </span>
         </div>
 
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 

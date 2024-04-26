@@ -1,29 +1,28 @@
 
 import styles from '@/styles/Style.module.scss';
+import Section from '@/components/ui/feature/Section';
+import Container from '../../ui/feature/Container';
 
 const ExploreDestination = () => {
   return (
-    <section
-      className={`w-full flex justify-center min-h-screen`}
+    <Section
+      classes={`w-full flex justify-center min-h-screen`}
     >
 
-      <div className={`max_container_width md:px-5 mt-24`}>
+      <Container classes={`md:px-5 mt-24 w-[99%]`}>
+        
 
         <div className={`w-full flex items-center justify-between`}>
             
           <div>
             <span className={`${styles.main_heading} ${styles.big_heading} dark:text-gray-400 font-bold`}>Explore Destinations</span>
           </div>
-          
-          {/* <div>
-            <span>Explore</span>
-          </div> */}
 
         </div>
         
-      </div>
+      </Container>
 
-    </section>
+    </Section>
   );
 };
 

@@ -1,6 +1,7 @@
 
 import styles from '@/styles/Style.module.scss';
 import { SearchSolid, LocationSolid, DurationSolid, CalenderRegular } from '@/assets/svgs/uiSvg';
+import { BiSearch } from 'react-icons/bi';
 
 const SearchBar = () => {
   return (
@@ -33,9 +34,7 @@ const SearchBar = () => {
             <div
                 className={`${styles.bg_primary} p-3 gap-2 rounded-full flex items-center justify-center mx-3 hover:cursor-pointer`}
             >
-                <div className='lg:hidden'>
-                    <SearchSolid height="1rem" width="1rem" fillColor="#FFFFFF" strokeWidth="2" strokeColor="#FFFFFF"/>
-                </div>
+                <BiSearch size={20} className='text-white lg:hidden'/>
                 <span className={`text-white font-[500] text-lg hidden lg:block`}>Search</span>
             </div>
 
@@ -44,4 +43,4 @@ const SearchBar = () => {
   )
 }
 
-export default SearchBar
+export default SearchBar;

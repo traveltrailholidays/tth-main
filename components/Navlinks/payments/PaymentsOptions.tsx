@@ -1,6 +1,6 @@
 'use client';
 
-import PaymentsAccordion from '@/components/payments/PaymentsAccordion';
+import PaymentsAccordion from '@/components/Navlinks/payments/PaymentsAccordion';
 import styles from "@/styles/Style.module.scss";
 import { DialerSolid } from '@/assets/svgs/uiSvg';
 

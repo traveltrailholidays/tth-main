@@ -1,4 +1,4 @@
-import ContactForm from "@/components/contact/ContactForm";
+import ContactForm from "@/components/Navlinks/contact/ContactForm";
 import OfficeLocation from "./OfficeLocation";
 
 

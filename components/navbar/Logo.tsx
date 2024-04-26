@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import logo from '@/assets/images/logo.png';
 import styles from '@/styles/Style.module.scss';
 
 const Logo = () => {
@@ -13,10 +12,12 @@ const Logo = () => {
     >
         
         <Image 
-            src={logo} 
+            src="/images/logo.png" 
             alt='logo' 
-            priority 
-            className={`w-10 md:w-12`}
+            priority
+            width="100"
+            height="100"
+            className={`w-10 lg:w-12`}
         />
         
         <span 

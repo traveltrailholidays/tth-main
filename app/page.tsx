@@ -1,6 +1,6 @@
-import React from 'react';
-import HeroSection from '@/components/home/HeroSection';
-import ExploreDestination from '@/components/home/ExploreDestination';
+
+import HeroSection from '@/components/Navlinks/home/HeroSection';
+import ExploreDestination from '@/components/Navlinks/home/ExploreDestination';
 
 const Home = () => {
   return (
@@ -11,4 +11,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Home;

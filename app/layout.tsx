@@ -4,7 +4,8 @@ import '@/styles/globals.css';
 import Header from '@/components/navbar/Header';
 // import FooterBar from '@/components/footer/FooterBar';
 import Footer from '@/components/footer/Footer';
-import { ThemeProvider } from "@/components/theme/ThemeProvider";
+import { ThemeProvider } from "@/components/ui/theme/ThemeProvider";
+import Modal from "@/components/modal/Modal";
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -30,6 +31,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${poppins.className}`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange >
+          <Modal/>
           <Header/>
           {children}
           {/* <FooterBar/> */}

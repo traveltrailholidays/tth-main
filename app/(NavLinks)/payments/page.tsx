@@ -1,5 +1,5 @@
-import PaymentsHeroSection from '@/components/payments/PaymentsHeroSection';
-import PaymentsOptions from '@/components/payments/PaymentsOptions';
+import PaymentsHeroSection from '@/components/Navlinks/payments/PaymentsHeroSection';
+import PaymentsOptions from '@/components/Navlinks/payments/PaymentsOptions';
 
 export default function Payments() {
   return (
