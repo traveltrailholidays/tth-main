@@ -5,7 +5,11 @@ import Header from '@/components/navbar/Header';
 // import FooterBar from '@/components/footer/FooterBar';
 import Footer from '@/components/footer/Footer';
 import { ThemeProvider } from "@/components/ui/theme/ThemeProvider";
-import Modal from "@/components/modal/Modal";
+import AccountModal from "@/components/modal/AccountModal";
+import RegisterModal from "@/components/modal/RegisterModal";
+import ToasterProvider from "@/providers/ToasterProvider";
+import LoginModal from "@/components/modal/LoginModal";
+import getCurrentUser from "@/app/actions/getCurrentUser";
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -22,17 +26,23 @@ export const metadata: Metadata = {
   }
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const currentUser = await getCurrentUser();
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${poppins.className}`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange >
-          <Modal/>
-          <Header/>
+          <ToasterProvider/>
+          <AccountModal/>
+          <RegisterModal/>
+          <LoginModal/>
+          <Header currentUser={currentUser}/>
           {children}
           {/* <FooterBar/> */}
           <Footer/>

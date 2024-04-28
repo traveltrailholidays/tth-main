@@ -6,7 +6,15 @@ import MenuBtn from "@/components/navbar/MenuBtn";
 import Container from "@/components/ui/feature/Container";
 import Section from "@/components/ui/feature/Section";
 
-const Header = () => {
+import { SafeUser } from "@/types";
+
+interface HeaderProps {
+  currentUser?: SafeUser | null;
+}
+
+const Header: React.FC<HeaderProps> = ({
+  currentUser
+}) => {
   return (
     <Section classes="fixed top-0 z-40">
       <div className={`py-4 border-b-[1px]`}>
@@ -20,7 +28,7 @@ const Header = () => {
 
             <div className={`flex items-center gap-10`}>
               <Navlink />
-              <MenuBtn />
+              <MenuBtn currentUser={currentUser}/>
             </div>
           </div>
         </Container>
