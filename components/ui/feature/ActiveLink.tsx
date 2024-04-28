@@ -12,7 +12,7 @@ interface NavLinkProps {
 }
 
 const ActiveLink = ({ href, exact = false, children, className = '', ...props }: NavLinkProps) => {
-    const pathname = usePathname();
+    const pathname = usePathname() ?? '';
 
     // Determine if the link is active
     const isActive = exact ? pathname === href : pathname.startsWith(href);
