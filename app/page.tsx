@@ -2,6 +2,7 @@ import Home from "@/components/home";
 import Counter from "@/components/home/counter";
 import ExplorePackages from "@/components/home/explore-packages";
 import Navbar from "@/components/navbar";
+import CustomizePackage from "@/components/packages/package-customize";
 
 const page = () => {
   return (
@@ -10,6 +11,7 @@ const page = () => {
       <Home />
       <ExplorePackages />
       <Counter />
+      <CustomizePackage />
     </>
   )
 }
