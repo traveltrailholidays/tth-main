@@ -79,3 +79,7 @@
 .heroTitle {
   font-size: clamp(2.875rem, 0.4327rem + 5.0881vw, 4.5rem);
 }
+
+.heading {
+  font-size: clamp(1.25rem, 0.8894rem + 2.4038vw, 2.8125rem);
+}
