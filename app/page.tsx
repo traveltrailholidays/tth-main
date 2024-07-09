@@ -3,6 +3,7 @@ import Counter from "@/components/home/counter";
 import ExplorePackages from "@/components/home/explore-packages";
 import Navbar from "@/components/navbar";
 import CustomizePackage from "@/components/packages/package-customize";
+import FilterPackages from "@/components/packages/package-filter";
 
 const page = () => {
   return (
@@ -10,8 +11,9 @@ const page = () => {
       <Navbar />
       <Home />
       <ExplorePackages />
-      <Counter />
+      <FilterPackages />
       <CustomizePackage />
+      <Counter />
     </>
   )
 }
