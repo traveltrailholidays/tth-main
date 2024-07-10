@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "@/app/globals.css";
 import { Providers } from "@/app/components/theme/providers";
 import NextTopLoader from "nextjs-toploader";
+import ToasterProvider from "@/providers/ToasterProvider";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -23,6 +24,7 @@ export default function RootLayout({
     <html lang="en" className={montserrat.className} suppressHydrationWarning>
       <body className="">
         <NextTopLoader color="#FF5956" height={3} showSpinner={false}/>
+        <ToasterProvider />
         <Providers>
           {children}
         </Providers>

@@ -12,7 +12,7 @@ const LargeDeviceMenu: FC<LargeDeviceMenuProps> = ({ className }) => {
   return (
     <div className={`${className} absolute right-0 bg-background rounded-xl py-1 w-[250px] shadow-all-side dark:shadow-white/5 top-[52px] hidden md:flex flex-col`}>
       <Link
-        href="/auth/signin"
+        href="/auth"
         className=' hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer font-semibold flex gap-3 items-center px-3 border-b h-16'
       >
         <Image

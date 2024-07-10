@@ -1,8 +1,11 @@
+import SignInAuth from '@/components/auth';
 import React from 'react'
 
 const AuthUser = () => {
   return (
-    <div>AuthUser</div>
+    <>
+      <SignInAuth />
+    </>
   )
 }
 
