@@ -1,11 +1,18 @@
+import getCurrentUser from "@/actions/getCurrentUser";
+import Navbar from "@/components/navbar";
+
 interface RouteLayoutProps {
     children: React.ReactNode;
 }
 
-const RouteLayout: React.FC<RouteLayoutProps> = ({ children }) => {
+const RouteLayout: React.FC<RouteLayoutProps> = async ({ children }) => {
+
+  const currentuser = await getCurrentUser();
+
   return (
     <>
-        {children}
+      <Navbar currentUser={currentuser}/>
+      {children}
     </>
   )
 }

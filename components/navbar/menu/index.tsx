@@ -1,11 +1,17 @@
 'use client';
 
 import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import LargeDeviceMenu from '@/components/navbar/menu/large-device';
+import { safeUser } from '@/types';
+import Avatar from '@/app/components/libs/Avatar';
 
-const Menu = () => {
+interface MenuProps {
+  currentUser?: safeUser | null;
+}
+
+const Menu: FC<MenuProps> = ({ currentUser }) => {
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -55,18 +61,12 @@ const Menu = () => {
         className='border-2 p-2 rounded-full flex gap-2 items-center cursor-pointer'
       >
         <HiOutlineMenuAlt3 size={20} />
-        <Image
-          src={`/avatar.png`}
-          alt='profile'
-          width={28}
-          height={28}
-          className='rounded-full hidden md:block'
-        />
+        <Avatar src={ currentUser?.image }/>
       </div>
 
       {isOpen && (
         <>
-          <LargeDeviceMenu className='modal'/>
+          <LargeDeviceMenu className='modal' currentUser={currentUser}/>
         </>
       )}
     </div>
