@@ -4,7 +4,7 @@ import Container from '@/app/components/libs/Container';
 import Logo from '@/app/components/libs/Logo';
 import Section from '@/app/components/libs/Section';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { useState, useCallback } from 'react';
 import axios from 'axios';
@@ -17,8 +17,11 @@ import {
 import Input from '@/app/components/libs/Input';
 import toast from 'react-hot-toast';
 import { signIn } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 
 const SignInAuth = () => {
+
+    const router = useRouter();
 
     const [isLoading, setIsLoading] = useState(false);
     const {
@@ -41,6 +44,7 @@ const SignInAuth = () => {
         axios.post('api/auth/signin', data)
             .then(() => {
                 // Todo: reidrect to homepage
+                router.push('/');
             })
             .catch((error) => {
                 toast.error('Something went wrong');
@@ -48,7 +52,12 @@ const SignInAuth = () => {
             .finally(() => {
                 setIsLoading(false);
             })
-    }
+    };
+
+    const handleGoogleSignIn = () => {
+        signIn('google');
+        toast.success('Logged in');
+    };
 
     return (
         <Section>
@@ -67,7 +76,7 @@ const SignInAuth = () => {
                     <h1 className='text-gray-800 dark:text-gray-50'>
                         Unlock a world of travel with one account across Travel Trail Holidays
                     </h1>
-                    <Input
+                    {/* <Input
                         id="name"
                         label="Name"
                         disabled={isLoading}
@@ -97,11 +106,11 @@ const SignInAuth = () => {
                         className='bg-custom-clp text-white'
                     >
                         Create an account
-                    </button>
+                    </button> */}
                     <div className='flex flex-col gap-4 mt-3'>
-                        <hr />
+                        {/* <hr /> */}
                         <button
-                            onClick={() => signIn('google')} 
+                            onClick={handleGoogleSignIn} 
                             className='flex items-center justify-center gap-3 border-2 py-3 rounded'
                         >
                             <FcGoogle />
