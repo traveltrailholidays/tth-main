@@ -3,8 +3,8 @@ import Home from "@/components/home";
 import Counter from "@/components/home/counter";
 import ExplorePackages from "@/components/home/explore-packages";
 import Navbar from "@/components/navbar";
+import PackageCategories from "@/components/packages/package-category";
 import CustomizePackage from "@/components/packages/package-customize";
-import FilterPackages from "@/components/packages/package-filter";
 
 const page = async () => {
 
@@ -15,7 +15,7 @@ const page = async () => {
       <Navbar currentUser={currentuser}/>
       <Home />
       <ExplorePackages />
-      <FilterPackages />
+      <PackageCategories />
       <CustomizePackage />
       <Counter />
     </>
