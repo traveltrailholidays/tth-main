@@ -8,23 +8,7 @@ import { GiSelfLove } from "react-icons/gi";
 import CategoryBox from '@/components/packages/package-category/category-box/index';
 import { usePathname, useSearchParams } from 'next/navigation';
 
-export const categories = [
-    {
-        label: 'Romantic',
-        icon: GiSelfLove,
-        description: 'This is a romantic package'
-    },
-    {
-        label: 'Religious',
-        icon: GiSelfLove,
-        description: 'This is a romantic package'
-    },
-    {
-        label: 'Adventure',
-        icon: GiSelfLove,
-        description: 'This is a romantic package'
-    },
-];
+import { categories } from '@/data/categories';
 
 const PackageCategories = () => {
 
