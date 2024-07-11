@@ -17,8 +17,6 @@ const ExplorePackages = () => {
             </div>
             <div className='flex justify-around flex-wrap gap-5'>
               <PackageCard />
-              <PackageCard />
-              <PackageCard />
             </div>
         </Container>
     </Section>
