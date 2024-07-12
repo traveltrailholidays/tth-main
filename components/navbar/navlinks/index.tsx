@@ -7,7 +7,7 @@ const Navlinks = () => {
     >
       <ActiveLink exact href='/' text='Home' />
       <ActiveLink exact href='/about-us' text='About' />
-      <ActiveLink exact href='/contact-us' text='Contact' />
+      <ActiveLink exact href='/packages' text='Packages' />
       <ActiveLink exact href='/payments' text='Payments' />
     </div>
   )

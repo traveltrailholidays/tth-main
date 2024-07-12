@@ -5,12 +5,12 @@ import Image from 'next/image';
 
 const AboutHeroSection = () => {
   return (
-    <Section className="mt-16">
+    <Section className="mt-16 !p-0">
       <div
         className={`w-full h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px] xl:h-[400px] relative`}
       >
         <Image
-          src="/images/aboutUs.jpg"
+          src="/aboutUs.jpg"
           width={4240}
           height={2832}
           alt="hero_bg"

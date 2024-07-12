@@ -2,7 +2,7 @@
 
 import Container from '@/app/components/libs/Container';
 import Section from '@/app/components/libs/Section';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { categories } from '@/data/categories';
 import CategoryInput from '@/components/inputs/category-input';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
@@ -31,37 +31,39 @@ const CreatePackage = () => {
   } = useForm<FieldValues>({
     defaultValues: {
       category: "",
-      location: "delhi",
+      location: "",
       title: "",
       description: "",
-      imageSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi-LbCkTg5lfB8_0xx_m58dN6QrHKTn3hqNA&s",
+      imageSrc: "",
       price: 1,
       days: 1,
-      nights: 1,
+      nights: 0,
       rating: 5,
     }
   });
 
   const category = watch('category');
-  const location = watch('location');
   const days = watch('days');
   const nights = watch('nights');
-  const imageSrc = watch('imageSrc');
+
+  useEffect(() => {
+    setValue('nights', days - 1);
+  }, [days, setValue]);
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
     axios.post('/api/packages', data)
-    .then(() => {
-      toast.success('Package created');
-      router.refresh();
-      reset();
-    })
-    .catch(() => {
-      toast.error('Something went wrong');
-    })
-    .finally(() => {
-      setIsLoading(false);
-    })
+      .then(() => {
+        toast.success('Package created');
+        router.refresh();
+        reset();
+      })
+      .catch(() => {
+        toast.error('Something went wrong');
+      })
+      .finally(() => {
+        setIsLoading(false);
+      })
   }
 
   const setCustomValue = (id: string, value: any) => {
@@ -82,7 +84,7 @@ const CreatePackage = () => {
           <h1 className='text-xl'>
             Select the category
           </h1>
-          <div className='flex mt-2 gap-5'>
+          <div className='flex mt-2 gap-5 flex-wrap'>
             {categories.map((item) => (
               <div
                 key={item.label}
@@ -102,85 +104,83 @@ const CreatePackage = () => {
           <h1 className='text-xl'>
             Select the Location
           </h1>
-          <div>
-            {/* <LocationInput
+          <Input
+            id='  location'
+            label='Location'
+            disabled={isLoading}
+            register={register}
+            errors={errors}
+            required
+          />
+          {/* <LocationInput
               value={location}
               onChange={(value) => setCustomValue('location', value)}
             /> */}
-            {/* <input 
-              type="text" 
-              onChange={(value) => setCustomValue('location', value)}
-              className='bg-custom-sbl dark:bg-custom-sbd w-full py-2 px-3 rounded'
-              placeholder='Location'
-              value={location}
-            /> */}
-          </div>
         </div>
-        <div>
-          <h1 className='text-xl'>
-            Select the category
-          </h1>
-          <CounterInput 
-            title='Days'
-            subtitle='Tell the number of days'
-            value={days}
-            onChange={(value) => setCustomValue('days', value)}
-          />
-          <hr />
-          <CounterInput 
-            title='Nights'
-            subtitle='Tell the number of nights'
-            value={nights}
-            onChange={(value) => setCustomValue('nights', value)}
-          />
-        </div>
-        {/* <div>
-          <h1 className='text-xl'>
-            Upload Images
-          </h1>
-          <ImageUpload 
+        <CounterInput
+          title='Days'
+          subtitle='Tell the number of days'
+          value={days}
+          onChange={(value) => setCustomValue('days', value)}
+        />
+        <CounterInput
+          title='Nights'
+          subtitle='Tell the number of nights'
+          value={watch('nights')}
+          onChange={(value) => setCustomValue('nights', value)}
+        />
+
+        {/* <ImageUpload 
             value={imageSrc}
             onChange={(value) => setCustomValue('imageSrc', value)}
-          />
-        </div> */}
-        <div>
-          <h1 className='text-xl'>
-            Select the category
-          </h1>
-          <Input 
-            id='title'
-            label='Title'
-            disabled={isLoading}
-            register={register}
-            errors={errors}
-            required
-          />
-          <hr />
-          <Input 
-            id='description'
-            label='Description'
-            disabled={isLoading}
-            register={register}
-            errors={errors}
-            required
-          />
-        </div>
-        <div>
-          <h1 className='text-xl'>
-            Select the category
-          </h1>
-          <Input 
-            id='price'
-            label='Price'
-            formatPrice
-            type='number'
-            disabled={isLoading}
-            register={register}
-            errors={errors}
-            required
-          />
-        </div>
-        <button 
+          /> */}
+
+        <Input
+          id='imageSrc'
+          label='Upload Image Link'
+          disabled={isLoading}
+          register={register}
+          errors={errors}
+          required
+        />
+
+        <Input
+          id='title'
+          label='Title'
+          disabled={isLoading}
+          register={register}
+          errors={errors}
+          required
+        />
+        <Input
+          id='description'
+          label='Description'
+          disabled={isLoading}
+          register={register}
+          errors={errors}
+          required
+        />
+        <Input
+          id='rating'
+          label='Place Rating'
+          type='number'
+          disabled={isLoading}
+          register={register}
+          errors={errors}
+          required
+        />
+        <Input
+          id='price'
+          label='Price'
+          formatPrice
+          type='number'
+          disabled={isLoading}
+          register={register}
+          errors={errors}
+          required
+        />
+
+        <button
           onClick={handleSubmit(onSubmit)}
           className='bg-custom-clp p-5 text-white'
         >
