@@ -1,4 +1,4 @@
-import prisma from '@/db/prismaDBConfig';
+import prisma from '@/backend/db/prismaDBConfig';
 
 export default async function getListings(){
     try {
