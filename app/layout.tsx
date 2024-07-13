@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "@/app/globals.css";
-import { Providers } from "@/app/components/theme/providers";
 import NextTopLoader from "nextjs-toploader";
-import ToasterProvider from "@/providers/ToasterProvider";
-import getCurrentUser from "@/actions/getCurrentUser";
+import ToasterProvider from "@/frontend/providers/ToasterProvider";
+import { Providers } from "@/components/theme/providers";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -27,9 +26,6 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
-  const currentuser = await getCurrentUser();
-
   return (
     <html lang="en" className={montserrat.className} suppressHydrationWarning>
       <body className="">

@@ -1,24 +1,18 @@
-import getCurrentUser from "@/actions/getCurrentUser";
-import Home from "@/components/home";
-import Counter from "@/components/home/counter";
-import ExplorePackages from "@/components/home/explore-packages";
-import Navbar from "@/components/navbar";
-import PackageCategories from "@/components/packages/package-category";
-import CustomizePackage from "@/components/packages/package-customize";
+import ClientOnly from '@/components/features/ClientOnly';
+import Header from '@/components/header';
+import HomeHeroSection from '@/components/home/hero-section';
+import getCurrentUser from '@/frontend/actions/getCurrentUser';
+import React from 'react';
 
 const page = async () => {
 
-  const currentuser = await getCurrentUser();
+  const currentUser = await getCurrentUser();
 
   return (
-    <>
-      <Navbar currentUser={currentuser}/>
-      <Home />
-      <ExplorePackages />
-      <PackageCategories />
-      <CustomizePackage />
-      <Counter />
-    </>
+    <ClientOnly>
+      <Header currentUser={currentUser}/>
+      <HomeHeroSection />
+    </ClientOnly>
   )
 }
 
