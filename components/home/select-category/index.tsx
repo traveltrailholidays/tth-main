@@ -23,8 +23,8 @@ const HomeSelectCategory = () => {
     }
 
   return (
-    <Section className='bg-custom-sbl dark:bg-custom-sbd py-12'>
-        <Container className='w-full flex flex-col gap-10'>
+    <Section className='bg-custom-sbl dark:bg-custom-sbd'>
+        <Container className='w-full flex flex-col gap-10 my-10'>
             <div>
                 <h1 className='text-custom-clp text-sm font-semibold'>
                     Still undecided?

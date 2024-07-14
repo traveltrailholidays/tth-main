@@ -34,7 +34,7 @@ const SinglePackage: React.FC<SinglePackageProps> = ({ reservations, listing, cu
                         <HeartButton
                             listingId={listing.id}
                             currentUser={currentUser}
-                        />
+                        /> 
                     </div>
                 </div>
                 <div className='w-full flex flex-col lg:flex-row gap-8'>

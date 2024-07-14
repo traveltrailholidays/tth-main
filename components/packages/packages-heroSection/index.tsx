@@ -8,15 +8,13 @@ import React from 'react'
 const PackagesHeroSection = () => {
     return (
         <>
-            <div className='w-screen'>
-                <div className='h-[250px] md:h-[500px] w-screen relative overflow-hidden'>
-                    <Image
-                        fill
-                        src="/packageHeroBg.jpg"
-                        alt='packages'
-                        className='object-cover h-full w-full'
-                    />
-                </div>
+            <div className='w-full h-[300px] md:h-[60vh] rounded-xl relative'>
+                <Image
+                    fill
+                    src="/packageHeroBg.jpg"
+                    alt='Package Image'
+                    className='object-cover w-full'
+                />
             </div>
             <Section>
                 <Container className='w-full relative'>

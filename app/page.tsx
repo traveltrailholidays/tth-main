@@ -1,6 +1,7 @@
 import ClientOnly from '@/components/features/ClientOnly';
 import Header from '@/components/header';
 import ExplorePackages from '@/components/home/explore-packages';
+import ExplorePackagesContainer from '@/components/home/explore-packages/explore-packages-card';
 import HomeHeroSection from '@/components/home/hero-section';
 import HomeSelectCategory from '@/components/home/select-category';
 import getCurrentUser from '@/frontend/actions/getCurrentUser';
@@ -12,14 +13,19 @@ const page = async () => {
   const currentUser = await getCurrentUser();
 
   return (
-    <ClientOnly>
-      <Header currentUser={currentUser}/>
-      <HomeHeroSection />
-      <ExplorePackages />
-      <Suspense> {/* I have to use this, because i used the useSearchParams in select category component */}
-        <HomeSelectCategory />
-      </Suspense>
-    </ClientOnly>
+    <>
+      <ClientOnly>
+        <Header currentUser={currentUser} />
+        <HomeHeroSection />
+        <ExplorePackages />
+      </ClientOnly>
+      <ExplorePackagesContainer />
+      <ClientOnly>
+        <Suspense> {/* I have to use this, because i used the useSearchParams in select category component */}
+          <HomeSelectCategory />
+        </Suspense>
+      </ClientOnly>
+    </>
   )
 }
 
