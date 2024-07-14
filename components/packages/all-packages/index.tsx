@@ -12,18 +12,15 @@ const AllPackages = async () => {
     const listings = await getListings();
     const currentUser = await getCurrentUser();
 
-    if(listings.length === 0) {
+    if (listings.length === 0) {
         return (
-            <EmptyState showReset/>
+            <EmptyState showReset />
         )
     }
 
-  return (
-    <Section>
-        <Container className='mt-40'>
-            <div
-                className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8'
-            >
+    return (
+        <Section>
+            <Container className='flex flex-col md:flex-row gap-6 flex-wrap justify-center'>
                 {listings.map((listings: any) => {
                     return (
                         <PackageCard
@@ -33,10 +30,9 @@ const AllPackages = async () => {
                         />
                     )
                 })}
-            </div>
-        </Container>
-    </Section>
-  )
+            </Container>
+        </Section>
+    )
 }
 
 export default AllPackages;

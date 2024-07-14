@@ -42,28 +42,34 @@ const PackageCard: React.FC<PackageCardProps> = ({ data, reservation, currentUse
     return data.price;
   }, [reservation, data.price]);
 
-  const discountedPrice = (data.price)-((data.price)*((data.discount)/100));
+  const discountedPrice = (data.price) - ((data.price) * ((data.discount) / 100));
 
   return (
     <div
       onClick={() => router.push(`/packages/${data.id}`)}
-      className='col-span-1 cursor-pointer group shadow dark:shadow-all-side dark:shadow-white/10 rounded'
+      className='cursor-pointer min-w-[200px] w-full max-w-[314.5px] shadow dark:shadow-all-side dark:shadow-white/10 rounded'
     >
-      <div className='flex flex-col gap-2 w-full'>
-        <div className='aspect-square w-[300px] h-[250px] relative overflow-hidden rounded-t'>
-          <Image
-            fill
-            src={data.imageSrc}
-            alt='packages'
-            className='object-cover h-full w-full group-hover:scale-110 transition '
+      <div className='relative'>
+        <img
+          src={data.imageSrc}
+          alt='package'
+          className='rounded-t h-[200px] object-cover'
+        />
+        <div className='absolute top-3 right-3'>
+          <HeartButton
+            listingId={data.id}
+            currentUser={currentUser}
           />
-          <div className='absolute top-3 right-3'>
-            <HeartButton
-              listingId={data.id}
-              currentUser={currentUser}
-            />
-          </div>
         </div>
+        {data.discount !== 0 ? (
+          <div className='absolute top-2 left-2 bg-orange-200 px-2 py-[2px] rounded text-sm font-semibold text-gray-800'>
+            {data.discount} &#37; OFF
+          </div>
+        ) : (
+          <></>
+        )}
+      </div>
+      <div className='flex flex-col gap-2 w-full'>
         <div className='px-2 py-3 flex flex-col gap-3'>
           <h1 className='text-lg font-semibold'>
             {data.title}
@@ -80,16 +86,16 @@ const PackageCard: React.FC<PackageCardProps> = ({ data, reservation, currentUse
                 </span>
               </div>
               <div className='flex gap-2'>
-                <FaBuilding/>
-                <FaCarAlt/>
-                <FaMapLocationDot/>
-                <GiForkKnifeSpoon/>
+                <FaBuilding />
+                <FaCarAlt />
+                <FaMapLocationDot />
+                <GiForkKnifeSpoon />
               </div>
             </div>
           </div>
           <div className='flex justify-between'>
             <div className='flex gap-[6px] text-sm'>
-              <FaStar className='mt-[1.7px]'/>
+              <FaStar className='mt-[1.7px]' />
               <span className='font-semibold'>
                 {data.rating}
               </span>
@@ -100,7 +106,7 @@ const PackageCard: React.FC<PackageCardProps> = ({ data, reservation, currentUse
                   <span className='text-custom-clp font-semibold flex gap-1'>
                     &#8377;
                     <s>
-                      {data.price}  
+                      {data.price}
                     </s>
                   </span>
                   <span className='font-semibold text-green-600'>
