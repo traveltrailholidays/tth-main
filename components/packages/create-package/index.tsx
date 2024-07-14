@@ -9,6 +9,7 @@ import CategoryInput from '@/components/features/Inputs/CategoryInput';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
+import ImageUpload from '@/components/features/Inputs/ImageUpload';
 
 const CreatePackage = () => {
 
@@ -37,6 +38,8 @@ const CreatePackage = () => {
             itinary: Array(1).fill("") // Start with one empty string for the itinary
         }
     });
+
+    const imageSrc = watch('imageSrc');
 
     const onSubmit = (data: any) => {
         console.log(data);
@@ -130,12 +133,16 @@ const CreatePackage = () => {
                         {errors.location && <span>Location is required</span>}
                     </div>
                     <div className='flex flex-col gap-3'>
-                        <input
+                        {/* <input
                             {...register("imageSrc", { required: true })}
                             placeholder='Enter Image Url'
                             className='border-gray-600 dark:border-gray-300 border px-2 py-3 rounded '
                         />
-                        {errors.imageSrc && <span>Image is required</span>}
+                        {errors.imageSrc && <span>Image is required</span>} */}
+                        <ImageUpload 
+                            value={imageSrc}
+                            onChange={(value) => setCustomValue('imageSrc', value)}
+                        />
                     </div>
                     <div className='flex flex-col gap-3'>
                         <input

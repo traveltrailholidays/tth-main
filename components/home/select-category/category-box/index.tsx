@@ -34,7 +34,7 @@ const CategoryBox: FC<CategoryBoxProps> = ({ icon: Icon, label, className, selec
         }
 
         const url = qs.stringifyUrl({
-            url: '/',
+            url: '/packages',
             query: updatedQuery
         }, { skipNull: true });
 
