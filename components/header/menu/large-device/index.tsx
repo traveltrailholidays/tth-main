@@ -5,6 +5,7 @@ import LargeMenuItems from './menu-items';
 import { MdDarkMode } from "react-icons/md";
 import { AiOutlineUser } from "react-icons/ai";
 import { IoLogOutOutline } from "react-icons/io5";
+import { LuPlus } from "react-icons/lu";
 import ThemeSwitcher from '@/components/theme/themeSwitcher';
 import { safeUser } from '@/frontend/types';
 import { signOut } from 'next-auth/react';
@@ -27,6 +28,12 @@ const LargeDeviceMenu: React.FC<LargeDeviceMenuProps> = ({ currentUser }) => {
                             {currentUser.name}
                         </h1>
                     </div>
+                    <LargeMenuItems
+                        href='/create-package'
+                        title='Create package'
+                        icon={LuPlus}
+                        className='border-b hover:bg-custom-phl dark:hover:bg-custom-phd'
+                    />
                 </>
             ) : (
                 <>

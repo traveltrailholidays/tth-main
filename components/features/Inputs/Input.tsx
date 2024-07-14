@@ -2,7 +2,7 @@
 
 import React, { FC } from 'react';
 import { FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form';
-import { BiDollar } from 'react-icons/bi';
+import { MdOutlineCurrencyRupee } from "react-icons/md";
 
 interface InputProps {
     id: string;
@@ -19,7 +19,7 @@ const Input: FC<InputProps> = ({ id, label, type, disabled, formatPrice, require
   return (
     <div className='w-full relative'>
         {formatPrice && (
-            <BiDollar 
+            <MdOutlineCurrencyRupee 
                 size={24}
                 className='text-neutral-700 absolute top-5 left-2 '
             />

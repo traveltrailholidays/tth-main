@@ -14,7 +14,7 @@ import {
     SubmitHandler,
     useForm
 } from 'react-hook-form';
-import Input from '@/components/features/Input';
+import Input from '@/components/features/Inputs/Input';
 import toast from 'react-hot-toast';
 import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
