@@ -202,6 +202,7 @@ const CreatePackage = () => {
                     </ul>
                     <button
                         type="submit"
+                        className='py-2 bg-custom-clp rounded font-medium'
                     >
                         Submit
                     </button>

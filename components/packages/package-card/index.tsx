@@ -5,7 +5,7 @@ import { Reservation } from '@prisma/client';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import React, { useCallback, useMemo } from 'react'
-import HeartButton from '../liked-packages';
+import HeartButton from '../liked-packages/like-button';
 import { MdWatchLater } from "react-icons/md";
 import { GiForkKnifeSpoon } from 'react-icons/gi';
 import { FaBuilding, FaMapLocationDot } from 'react-icons/fa6';
@@ -47,7 +47,7 @@ const PackageCard: React.FC<PackageCardProps> = ({ data, reservation, currentUse
   return (
     <div
       onClick={() => router.push(`/packages/${data.id}`)}
-      className='cursor-pointer min-w-[200px] w-full max-w-[314.5px] shadow dark:shadow-all-side dark:shadow-white/10 rounded'
+      className='cursor-pointer min-w-[200px] w-full max-w-[314.5px] shadow dark:shadow-white/25 rounded'
     >
       <div className='relative'>
         <img

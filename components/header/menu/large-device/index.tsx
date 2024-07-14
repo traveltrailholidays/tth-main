@@ -10,6 +10,7 @@ import ThemeSwitcher from '@/components/theme/themeSwitcher';
 import { safeUser } from '@/frontend/types';
 import { signOut } from 'next-auth/react';
 import Avatar from '@/components/features/Avatar';
+import { FaHeart } from 'react-icons/fa6';
 
 interface LargeDeviceMenuProps {
     currentUser: safeUser | null;
@@ -30,8 +31,14 @@ const LargeDeviceMenu: React.FC<LargeDeviceMenuProps> = ({ currentUser }) => {
                     </div>
                     <LargeMenuItems
                         href='/create-package'
-                        title='Create package'
+                        title='Create Package'
                         icon={LuPlus}
+                        className='border-b hover:bg-custom-phl dark:hover:bg-custom-phd'
+                    />
+                    <LargeMenuItems
+                        href='/liked-packages'
+                        title='Liked Packages'
+                        icon={FaHeart}
                         className='border-b hover:bg-custom-phl dark:hover:bg-custom-phd'
                     />
                 </>
