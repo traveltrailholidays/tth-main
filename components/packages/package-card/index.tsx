@@ -59,7 +59,7 @@ const PackageCard: React.FC<PackageCardProps> = ({ data, reservation, currentUse
           />
           <div className='absolute top-3 right-3'>
             <HeartButton
-              lisitngId={data.id}
+              listingId={data.id}
               currentUser={currentUser}
             />
           </div>
