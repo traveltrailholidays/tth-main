@@ -1,7 +1,6 @@
 import prisma from '@/backend/db/prismaDBConfig';
 
 export interface IListingsParams {
-    userId?: string;
     dest?: string;
     category?: string;
 }
@@ -9,14 +8,10 @@ export interface IListingsParams {
 export default async function getListings(params: IListingsParams){
     try {
 
-        const { userId, dest, category } = params;
+        const { dest, category } = params;
 
         let query: any = {};
-
-        if(userId) {
-            query.userId = userId;
-        }
-
+        
         if(dest) {
             query.location = {
                 contains: dest, // Use contains for partial matching
