@@ -14,7 +14,7 @@ import toast from 'react-hot-toast';
 import { safeUser } from '@/frontend/types';
 
 interface GoogleSignInProps {
-    currentUser: safeUser | null;
+    currentUser?: safeUser | null;
   };
 
 const GoogleSignIn: React.FC<GoogleSignInProps> = ({currentUser}) => {

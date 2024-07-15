@@ -1,13 +1,20 @@
 import GoogleSignIn from '@/components/auth/google-signin';
 import SignIn from '@/components/auth/signin';
 import ClientOnly from '@/components/features/ClientOnly';
+import { safeUser } from '@/frontend/types';
 import React from 'react';
 
-const page = () => {
+interface PageProps {
+  currentUser?: safeUser | null;
+}
+
+const page: React.FC<PageProps> = ({currentUser}) => {
   return (
     <ClientOnly>
         {/* <SignIn /> */}
-        <GoogleSignIn />
+        <GoogleSignIn 
+          currentUser={currentUser}
+        />
     </ClientOnly>
   )
 }
