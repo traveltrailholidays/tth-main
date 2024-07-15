@@ -1,14 +1,13 @@
 import GoogleSignIn from '@/components/auth/google-signin';
 import SignIn from '@/components/auth/signin';
 import ClientOnly from '@/components/features/ClientOnly';
-import { safeUser } from '@/frontend/types';
+import getCurrentUser from '@/frontend/actions/getCurrentUser';
 import React from 'react';
 
-interface PageProps {
-  currentUser?: safeUser | null;
-}
+const page = async () => {
 
-const page: React.FC<PageProps> = ({currentUser}) => {
+  const currentUser = await getCurrentUser();
+
   return (
     <ClientOnly>
         {/* <SignIn /> */}
