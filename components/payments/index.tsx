@@ -30,9 +30,6 @@ const PaymentsSection = () => {
                 </div>
             </div>
             <Container className={`md:px-5 w-[99%] mt-24`}>
-
-
-
                 <div className={`flex justify-between flex-col md:flex-row gap-10`}>
                     <div className={`w-full`}>
                         <div>

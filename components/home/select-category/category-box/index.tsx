@@ -41,7 +41,7 @@ const CategoryBox: FC<CategoryBoxProps> = ({ icon: Icon, label, className, selec
         router.push(url);
     }, [label, params, router]);
 
-  return (
+  return ( 
     <div
         onClick={handleClick} 
         className={`${className} flex flex-col items-center gap-3`}

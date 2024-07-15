@@ -3,13 +3,17 @@ import Container from '@/components/features/Container';
 import Section from '@/components/features/Section';
 import React from 'react'
 import EmptyState from './empty-state';
-import getListings from '@/frontend/actions/getListings';
+import getListings, { IListingsParams } from '@/frontend/actions/getListings';
 import PackageCard from '../package-card';
 import getCurrentUser from '@/frontend/actions/getCurrentUser';
 
-const AllPackages = async () => {
+interface AllPackagesProps {
+    searchParams: IListingsParams;
+}
 
-    const listings = await getListings();
+const AllPackages = async ({ searchParams }: AllPackagesProps) => {
+        
+    const listings = await getListings(searchParams);
     const currentUser = await getCurrentUser();
 
     if (listings.length === 0) {

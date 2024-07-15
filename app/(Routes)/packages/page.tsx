@@ -1,13 +1,20 @@
 import ClientOnly from '@/components/features/ClientOnly';
 import AllPackages from '@/components/packages/all-packages';
 import PackagesHeroSection from '@/components/packages/packages-heroSection';
+import { IListingsParams } from '@/frontend/actions/getListings';
 import React from 'react'
 
-const page = () => {
+interface AllPackagesProps {
+  searchParams: IListingsParams;
+}
+
+const page = ({searchParams}: AllPackagesProps) => {
   return (
     <ClientOnly>
       <PackagesHeroSection />
-      <AllPackages />
+      <AllPackages 
+        searchParams={searchParams}
+      />
     </ClientOnly>
   )
 }

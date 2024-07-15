@@ -10,6 +10,7 @@ import { MdWatchLater } from "react-icons/md";
 import { GiForkKnifeSpoon } from 'react-icons/gi';
 import { FaBuilding, FaMapLocationDot } from 'react-icons/fa6';
 import { FaCarAlt, FaStar } from 'react-icons/fa';
+import Link from 'next/link';
 
 interface PackageCardProps {
   data: SafeListing;
@@ -45,8 +46,9 @@ const PackageCard: React.FC<PackageCardProps> = ({ data, reservation, currentUse
   const discountedPrice = (data.price) - ((data.price) * ((data.discount) / 100));
 
   return (
-    <div
-      onClick={() => router.push(`/packages/${data.id}`)}
+    <Link
+      href={`/packages/${data.id}`}
+      // onClick={() => router.push(`/packages/${data.id}`)}
       className='cursor-pointer min-w-[200px] w-full max-w-[314.5px] shadow dark:shadow-white/25 rounded'
     >
       <div className='relative'>
@@ -122,7 +124,7 @@ const PackageCard: React.FC<PackageCardProps> = ({ data, reservation, currentUse
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
 

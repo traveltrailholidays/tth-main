@@ -15,7 +15,7 @@ const Avatar: FC<AvatarProps> = ({ src, className }) => {
             alt='profile'
             width={28}
             height={28}
-            className={`${className} rounded-full hidden md:block`}
+            className={`${className} rounded-full`}
         />
     )
 }

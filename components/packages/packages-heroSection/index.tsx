@@ -8,7 +8,7 @@ import React from 'react'
 const PackagesHeroSection = () => {
     return (
         <>
-            <div className='w-full h-[300px] md:h-[60vh] rounded-xl relative'>
+            <div className='w-full h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px] xl:h-[400px] rounded-xl relative'>
                 <Image
                     fill
                     src="/packageHeroBg.jpg"

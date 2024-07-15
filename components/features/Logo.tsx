@@ -14,12 +14,12 @@ const Logo: FC<LogoProps> = ({ className }) => {
       href="/"
       className={`${className} flex items-center gap-3`}
     >
-      {/* <Image
+      <Image
         src="/logo.png"
         alt='logo'
         width={36}
         height={36}
-      /> */}
+      />
       <span className='font-semibold text-2xl text-custom-clp'>
         Travel Trail Holidays
       </span>

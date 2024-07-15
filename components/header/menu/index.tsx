@@ -5,6 +5,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { HiMenuAlt3 } from "react-icons/hi";
 import LargeDeviceMenu from './large-device';
 import { safeUser } from '@/frontend/types';
+import SmallDeviceMenu from './small-device';
 
 interface MenuProps {
     currentUser: safeUser | null;
@@ -58,10 +59,13 @@ const Menu: React.FC<MenuProps> = ({ currentUser }) => {
                 className='shadow-all-side dark:shadow-gray-800 p-2 flex items-center justify-between gap-2 cursor-pointer rounded-3xl'
             >
                 <HiMenuAlt3 size={20} />
-                <Avatar src={currentUser?.image} />
+                <Avatar src={currentUser?.image} className='hidden md:flex'/>
             </div>
             {isOpen && (
-                <LargeDeviceMenu currentUser={currentUser}/>
+                <>
+                    <LargeDeviceMenu currentUser={currentUser}/>
+                    {/* <SmallDeviceMenu currentUser={currentUser}/> */}
+                </>
             )}
         </div>
     )
