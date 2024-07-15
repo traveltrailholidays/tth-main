@@ -5,22 +5,26 @@ import Logo from '@/components/features/Logo';
 import Section from '@/components/features/Section';
 import Link from 'next/link';
 import React, { useEffect } from 'react';
-import { FaArrowLeft } from 'react-icons/fa';
+import { FaArrowLeftLong } from "react-icons/fa6";;
 import { FcGoogle } from 'react-icons/fc';
 
-import { signIn, useSession } from 'next-auth/react';
+import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
+import { safeUser } from '@/frontend/types';
 
-const GoogleSignIn: React.FC = () => {
-    const { data: session, status } = useSession();
+interface GoogleSignInProps {
+    currentUser: safeUser | null;
+  };
+
+const GoogleSignIn: React.FC<GoogleSignInProps> = ({currentUser}) => {
     const router = useRouter();
 
     useEffect(() => {
-        if (status === 'authenticated' && session) {
-            router.push('/');
+        if(!currentUser) {
+            // router.push('/');
         }
-    }, [status, session, router]);
+    }, [currentUser, router]);
 
     const handleSignIn = async () => {
         try {
@@ -30,11 +34,11 @@ const GoogleSignIn: React.FC = () => {
                 router.push('/');
             } else {
                 console.error('Sign in error:', result?.error ?? 'Unknown error');
-                toast.success('Logged in!');
             }
+
+            toast.success('Logged in');
         } catch (error) {
             console.error('Sign in error:', error);
-            toast.error('Something went wrong. Please try again!');
         }
     };
 
@@ -45,7 +49,7 @@ const GoogleSignIn: React.FC = () => {
                     href="/"
                     className='absolute left-0 top-2 cursor-pointer hover:scale-125 transition text-custom-clp'
                 >
-                    <FaArrowLeft size={20} />
+                    <FaArrowLeftLong size={20} />
                 </Link>
                 <div className='w-full flex flex-col text-center items-center gap-3'>
                     <Logo className='mt-20 md:mt-0' />
@@ -72,9 +76,4 @@ const GoogleSignIn: React.FC = () => {
     );
 };
 
-const SignInPage: React.FC = () => (
-    <GoogleSignIn />
-);
-
-export default SignInPage;
-
+export default GoogleSignIn;

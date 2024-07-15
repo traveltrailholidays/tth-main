@@ -18,8 +18,8 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   favouriateIds String[] @db.ObjectId
-  isAdmin Boolean?
-  isAgent Boolean?
+  isAdmin Boolean @default(false)
+  isAgent Boolean @default(false)
 
   accounts Account[]
   listings Listing[]
