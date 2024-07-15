@@ -20,11 +20,17 @@ export default async function getCurrentUser() {
         if(!currentUser) {
             return null;
         }
+
+        const isAdmin = currentUser.isAdmin;
+        const isAgent = currentUser.isAgent;
+
         return {
             ...currentUser,
             createdAt: currentUser.createdAt.toISOString(),
             updatedAt: currentUser.updatedAt.toISOString(),
-            emailVerified: currentUser.emailVerified?.toISOString() || null
+            emailVerified: currentUser.emailVerified?.toISOString() || null,
+            isAdmin: isAdmin,
+            isAgent: isAgent
         };
     } catch (error: any) {
         return null;

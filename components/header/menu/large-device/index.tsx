@@ -21,20 +21,22 @@ const LargeDeviceMenu: React.FC<LargeDeviceMenuProps> = ({ currentUser }) => {
         <div className='modal absolute shadow-all-side dark:shadow-gray-800 w-[250px] right-0 rounded-xl top-[45px] md:top-[52px] bg-background py-2 flex flex-col'>
             {currentUser ? (
                 <>
-                    <div 
+                    <div
                         className='border-b flex items-center gap-3 px-3 h-16 hover:bg-custom-phl dark:hover:bg-custom-phd cursor-pointer'
                     >
-                        <Avatar src={currentUser.image} className='w-9 h-9'/>
+                        <Avatar src={currentUser.image} className='w-9 h-9' />
                         <h1 className='font-medium'>
                             {currentUser.name}
                         </h1>
                     </div>
-                    <LargeMenuItems
-                        href='/create-package'
-                        title='Create Package'
-                        icon={LuPlus}
-                        className='border-b hover:bg-custom-phl dark:hover:bg-custom-phd'
-                    />
+                    {currentUser.isAdmin && (
+                        <LargeMenuItems
+                            href='/create-package'
+                            title='Create Package'
+                            icon={LuPlus}
+                            className='border-b hover:bg-custom-phl dark:hover:bg-custom-phd'
+                        />
+                    )}
                     <LargeMenuItems
                         href='/liked-packages'
                         title='Liked Packages'
