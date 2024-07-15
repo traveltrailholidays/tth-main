@@ -49,19 +49,22 @@ const PackageCard: React.FC<PackageCardProps> = ({ data, reservation, currentUse
     <Link
       href={`/packages/${data.id}`}
       // onClick={() => router.push(`/packages/${data.id}`)}
-      className='cursor-pointer min-w-[200px] w-full max-w-[314.5px] shadow dark:shadow-white/25 rounded'
+      className='cursor-pointer group min-w-[200px] w-full max-w-[314.5px] shadow dark:shadow-white/25 rounded'
     >
-      <div className='relative'>
-        <img
-          src={data.imageSrc}
-          alt='package'
-          className='rounded-t h-[200px] object-cover'
-        />
-        <div className='absolute top-3 right-3'>
-          <HeartButton
-            listingId={data.id}
-            currentUser={currentUser}
+      <div className=''>
+        <div className='relative  overflow-hidden h-[200px]'>
+          <Image
+            fill
+            src={data.imageSrc}
+            alt='package'
+            className='rounded-t h-[200px] object-cover group-hover:scale-110 transition'
           />
+          <div className='absolute top-3 right-3'>
+            <HeartButton
+              listingId={data.id}
+              currentUser={currentUser}
+            />
+          </div>
         </div>
         {data.discount !== 0 ? (
           <div className='absolute top-2 left-2 bg-orange-200 px-2 py-[2px] rounded text-sm font-semibold text-gray-800'>

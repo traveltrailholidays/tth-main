@@ -8,14 +8,16 @@ interface AllPackagesProps {
   searchParams: IListingsParams;
 }
 
-const page = ({searchParams}: AllPackagesProps) => {
+const page = ({ searchParams }: AllPackagesProps) => {
   return (
-    <ClientOnly>
-      <PackagesHeroSection />
-      <AllPackages 
+    <>
+      <ClientOnly>
+        <PackagesHeroSection />
+      </ClientOnly>
+      <AllPackages
         searchParams={searchParams}
       />
-    </ClientOnly>
+    </>
   )
 }
 
