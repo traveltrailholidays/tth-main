@@ -15,21 +15,17 @@ const page = async () => {
   const currentUser = await getCurrentUser();
 
   return (
-    <>
+    <Suspense> {/* I have to use this, because i used the useSearchParams in select category component */}
       <ClientOnly>
         <Header currentUser={currentUser} />
         <HomeHeroSection />
         <SmallDeviceSearch />
         <ExplorePackages />
-      </ClientOnly>
-      <ExplorePackagesContainer />
-      <ClientOnly>
-        <Suspense> {/* I have to use this, because i used the useSearchParams in select category component */}
-          <HomeSelectCategory />
-        </Suspense>
+        <ExplorePackagesContainer /> 
+        <HomeSelectCategory />
         <Footer />
       </ClientOnly>
-    </>
+    </Suspense>
   )
 }
 
