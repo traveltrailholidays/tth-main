@@ -1,3 +1,5 @@
+'use client';
+
 import ClientOnly from '@/components/features/ClientOnly';
 import AllPackages from '@/components/packages/all-packages';
 import PackagesHeroSection from '@/components/packages/packages-heroSection';
@@ -8,16 +10,14 @@ interface AllPackagesProps {
   searchParams: IListingsParams;
 }
 
-const page = ({ searchParams }: AllPackagesProps) => {
+const page = ({searchParams}: AllPackagesProps) => {
   return (
-    <>
-      <ClientOnly>
-        <PackagesHeroSection />
-      </ClientOnly>
-      <AllPackages
+    <ClientOnly>
+      <PackagesHeroSection />
+      <AllPackages 
         searchParams={searchParams}
       />
-    </>
+    </ClientOnly>
   )
 }
 

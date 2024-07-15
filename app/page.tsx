@@ -16,13 +16,15 @@ const page = async () => {
 
   return (
     <Suspense> {/* I have to use this, because i used the useSearchParams in select category component */}
-      <Header currentUser={currentUser} />
-      <HomeHeroSection />
-      <SmallDeviceSearch />
-      <ExplorePackages />
-      <ExplorePackagesContainer />
-      <HomeSelectCategory />
-      <Footer />
+      <ClientOnly>
+        <Header currentUser={currentUser} />
+        <HomeHeroSection />
+        <SmallDeviceSearch />
+        <ExplorePackages />
+        <ExplorePackagesContainer /> 
+        <HomeSelectCategory />
+        <Footer />
+      </ClientOnly>
     </Suspense>
   )
 }
