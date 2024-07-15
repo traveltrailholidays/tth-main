@@ -3,7 +3,7 @@ import React from 'react'
 
 const ExplorePackagesContainer = () => {
     return (
-        <div className='flex justify-center mb-20 mt-10'>
+        <div className='w-full flex justify-center mb-20 mt-10'>
             <ExplorePackagesCard />
         </div>
     )

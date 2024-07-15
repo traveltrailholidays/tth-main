@@ -3,17 +3,16 @@ import Container from '@/components/features/Container';
 import Section from '@/components/features/Section';
 import React from 'react'
 import EmptyState from './empty-state';
-import getListings, { IListingsParams } from '@/frontend/actions/getListings';
+import getListings from '@/frontend/actions/getListings';
 import PackageCard from '../package-card';
 import getCurrentUser from '@/frontend/actions/getCurrentUser';
-import { SafeListing, safeUser } from '@/frontend/types';
 
-interface AllPackagesProps {
-    listings: any;
-    currentUser?: safeUser | null;
-}
 
-const AllPackages: React.FC<AllPackagesProps> = async ({listings, currentUser}) => {
+
+const AllPackages = async () => {
+
+    const listings = await getListings();
+    const currentUser = await getCurrentUser();
 
     if (listings.length === 0) {
         return (
