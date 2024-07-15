@@ -1,5 +1,6 @@
 'use client';
 
+import ClientOnly from '@/components/features/ClientOnly';
 import Container from '@/components/features/Container';
 import Section from '@/components/features/Section';
 import Image from 'next/image';
@@ -7,7 +8,7 @@ import React from 'react'
 
 const PackagesHeroSection = () => {
     return (
-        <>
+        <ClientOnly>
             <div className='w-full h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px] xl:h-[400px] rounded-xl relative'>
                 <Image
                     fill
@@ -31,7 +32,7 @@ const PackagesHeroSection = () => {
                     </h1>
                 </Container>
             </Section>
-        </>
+        </ClientOnly>
     )
 }
 
