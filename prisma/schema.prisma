@@ -18,6 +18,8 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   favouriateIds String[] @db.ObjectId
+  isAdmin Boolean?
+  isAgent Boolean?
 
   accounts Account[]
   listings Listing[]
@@ -37,8 +39,6 @@ model Account {
   scope String?
   id_token String? @db.String
   session_state String?
-  admin Boolean?
-  agent Boolean?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
   @@unique([provider, providerAccountId])
