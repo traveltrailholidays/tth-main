@@ -59,7 +59,7 @@ const Menu: React.FC<MenuProps> = ({ currentUser }) => {
                 className='shadow-all-side dark:shadow-gray-800 p-2 flex items-center justify-between gap-2 cursor-pointer rounded-3xl'
             >
                 <HiMenuAlt3 size={20} />
-                <Avatar src={currentUser?.image} className='hidden md:flex'/>
+                <Avatar src={currentUser?.image} className='hidden md:flex select-none'/>
             </div>
             {isOpen && (
                 <>

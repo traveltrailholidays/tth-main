@@ -12,7 +12,7 @@ const Logo: FC<LogoProps> = ({ className }) => {
   return (
     <Link
       href="/"
-      className={`${className} flex items-center gap-3`}
+      className={`${className} flex items-center gap-3 select-none`}
     >
       <Image
         src="/logo.png"

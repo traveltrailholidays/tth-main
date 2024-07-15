@@ -28,7 +28,14 @@ const SmallDeviceSearch = () => {
         setSelectedMonth(selectedMonth);
     };
 
+    const isFormValid = selectedLocation !== '';
+
     const onSubmit = useCallback(async () => {
+
+        if (!isFormValid) {
+            return;
+        }
+
         let currentQuery = {};
         if (params) {
             currentQuery = qs.parse(params.toString());
@@ -48,8 +55,6 @@ const SmallDeviceSearch = () => {
             router.push(url);
         }
     }, [selectedLocation, selectedDuration, selectedMonth, params, router]);
-
-    const isFormValid = selectedLocation !== '';
 
     return (
         <Section className='mt-24 mb-12 md:hidden'>

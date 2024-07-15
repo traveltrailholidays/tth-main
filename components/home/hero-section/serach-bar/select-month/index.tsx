@@ -35,12 +35,12 @@ const SelectMonthSearch: React.FC<MonthSelectProps> = ({ onSelect, className }) 
             onChange={handleChange}
             className={`${className}`}
         >
-            <option value="">Select Month</option>
+            <option value="" hidden disabled>Select Month</option>
             {months.map(month => (
                 <option
                     key={month.value}
                     value={month.value}
-                    className='!mt-20'
+                    className=''
                 >
                     {month.label}
                 </option>

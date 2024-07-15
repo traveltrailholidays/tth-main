@@ -33,14 +33,14 @@ const HomeSelectCategory = () => {
                     Browse packages through holiday THEMES
                 </h1>
             </div>
-            <div className='flex flex-wrap gap-5 justify-between'>
+            <div className='flex flex-wrap gap-5 justify-around]'>
                 {categories.map((item) => (
                     <CategoryBox 
                         key={item.label}
                         label={item.label}
                         icon={item.icon}
                         selected={category === item.label}
-                        className='border py-4 px-10 rounded cursor-pointer'
+                        className='border py-4 px-10 rounded cursor-pointer w-[200px]'
                     />
                 ))}
             </div>

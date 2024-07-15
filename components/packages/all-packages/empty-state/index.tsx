@@ -34,6 +34,7 @@ const EmptyState: React.FC<EmptyStateProps> = ({
                     {showReset && (
                         <button
                             onClick={() => router.push('/packages')}
+                            className='bg-custom-clp px-5 py-3 font-semibold text-white rounded hover:bg-custom-clp/80 transition'
                         >
                             Remove all filters
                         </button>

@@ -80,7 +80,7 @@ const CreatePackage = () => {
 
     return (
         <Section className=''>
-            <Container className='mt-20 shadow-all-side dark:shadow-gray-800 w-full rounded py-5 px-5 flex flex-col gap-10'>
+            <Container className='mt-28 mb-20 shadow-all-side dark:shadow-gray-800 w-full rounded py-5 px-5 flex flex-col gap-10'>
                 <h1 className='text-3xl font-semibold'>
                     Create a package
                 </h1>
@@ -89,10 +89,10 @@ const CreatePackage = () => {
                     className='flex flex-col gap-8'
                 >
                     <div>
-                        <h1 className='text-xl'>
+                        <h1 className='text-xl ml-1'>
                             Select the category
                         </h1>
-                        <div className='flex mt-2 gap-5 flex-wrap'>
+                        <div className='flex mt-4 gap-5 flex-wrap'>
                             {categories.map((item) => (
                                 <div
                                     key={item.label}
@@ -112,7 +112,7 @@ const CreatePackage = () => {
                         <input
                             {...register("title", { required: true })}
                             placeholder='Title'
-                            className='border-gray-600 dark:border-gray-300 border px-2 py-3 rounded '
+                            className='border-neutral-200 dark:border-gray-800 border-2 px-2 py-3 rounded '
                         />
                         {errors.title && <span>Title is required</span>}
                     </div>
@@ -120,7 +120,7 @@ const CreatePackage = () => {
                         <textarea
                             {...register("description", { required: true })}
                             placeholder='Description'
-                            className='border-gray-600 dark:border-gray-300 border px-2 py-3 rounded min-h-20'
+                            className='border-neutral-200 dark:border-gray-800 border-2 px-2 py-3 rounded min-h-20'
                         />
                         {errors.description && <span>Description is required</span>}
                     </div>
@@ -128,73 +128,82 @@ const CreatePackage = () => {
                         <input
                             {...register("location", { required: true })}
                             placeholder='Location'
-                            className='border-gray-600 dark:border-gray-300 border px-2 py-3 rounded '
+                            className='border-neutral-200 dark:border-gray-800 border-2 px-2 py-3 rounded '
                         />
                         {errors.location && <span>Location is required</span>}
                     </div>
                     <div className='flex flex-col gap-3'>
-                        {/* <input
-                            {...register("imageSrc", { required: true })}
-                            placeholder='Enter Image Url'
-                            className='border-gray-600 dark:border-gray-300 border px-2 py-3 rounded '
-                        />
-                        {errors.imageSrc && <span>Image is required</span>} */}
                         <ImageUpload 
                             value={imageSrc}
                             onChange={(value) => setCustomValue('imageSrc', value)}
                         />
                     </div>
-                    <div className='flex flex-col gap-3'>
+                    <div className='flex flex-col gap-3 relative'>
                         <input
                             type="number"
                             {...register("price", { valueAsNumber: true })}
                             placeholder='Price'
                             required
-                            className='border-gray-600 dark:border-gray-300 border px-2 py-3 rounded '
+                            className='border-neutral-200 dark:border-gray-800 border-2 pl-[70px] pr-2 py-3 rounded '
                         />
+                        <div className='absolute top-1/2 -translate-y-1/2 left-3'>
+                            Price :
+                        </div>
                     </div>
-                    <div className='flex flex-col gap-3'>
+                    <div className='flex flex-col gap-3 relative'>
                         <input
                             type="number"
                             {...register("days", { valueAsNumber: true })} onChange={handleDaysChange}
                             placeholder='Days'
-                            className='border-gray-600 dark:border-gray-300 border px-2 py-3 rounded '
+                            className='border-neutral-200 dark:border-gray-800 border-2 pl-[70px] pr-2 py-3 rounded '
                         />
+                        <div className='absolute top-1/2 -translate-y-1/2 left-3'>
+                            Days :
+                        </div>
                     </div>
-                    <div className='flex flex-col gap-3'>
+                    <div className='flex flex-col gap-3 relative'>
                         <input
                             type="number"
                             {...register("nights", { valueAsNumber: true })}
                             value={watch("nights")}
                             readOnly
-                            className='border-gray-600 dark:border-gray-300 border px-2 py-3 rounded '
+                            className='border-neutral-200 dark:border-gray-800 border-2 pl-20 pr-2 py-3 rounded '
                         />
+                        <div className='absolute top-1/2 -translate-y-1/2 left-3'>
+                            Nights :
+                        </div>
                     </div>
-                    <div className='flex flex-col gap-3'>
+                    <div className='flex flex-col gap-3 relative'>
                         <input
                             type="number"
                             step="0.1"
                             {...register("rating", { valueAsNumber: true })}
                             placeholder='Rating'
-                            className='border-gray-600 dark:border-gray-300 border px-2 py-3 rounded '
+                            className='border-neutral-200 dark:border-gray-800 border-2 pl-20 pr-2 py-3 rounded '
                         />
+                        <div className='absolute top-1/2 -translate-y-1/2 left-3'>
+                            Rating :
+                        </div>
                     </div>
-                    <div className='flex flex-col gap-3'>
+                    <div className='flex flex-col gap-3 relative'>
                         <input
                             type="number"
                             {...register("discount", { valueAsNumber: true })}
                             placeholder='Discount'
-                            className='border-gray-600 dark:border-gray-300 border px-2 py-3 rounded '
+                            className='border-neutral-200 dark:border-gray-800 border-2 pl-[100px] pr-2 py-3 rounded '
                         />
+                        <div className='absolute top-1/2 -translate-y-1/2 left-3'>
+                            Discount :
+                        </div>
                     </div>
                     <ul className='flex flex-col gap-8'>
                         {watch("itinary", []).map((item: any, index: any) => (
                             <li key={index}>
-                                <input
+                                <textarea
                                     {...register(`itinary.${index}`, { required: true })}
                                     defaultValue={item}
                                     placeholder={`Day ${index + 1}`}
-                                    className='border-gray-600 dark:border-gray-300 border px-2 py-3 rounded w-full'
+                                    className='border-neutral-200 dark:border-gray-800 border-2 px-2 py-3 rounded w-full'
                                 />
                                 {errors.itinary && <span>Day {index + 1} is required</span>}
                             </li>
@@ -202,7 +211,7 @@ const CreatePackage = () => {
                     </ul>
                     <button
                         type="submit"
-                        className='py-2 bg-custom-clp rounded font-medium'
+                        className='py-2 bg-custom-clp rounded font-medium text-white hover:bg-custom-clp/80'
                     >
                         Submit
                     </button>
