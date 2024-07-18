@@ -33,7 +33,7 @@ const HomeSelectCategory = () => {
                     Browse packages through holiday THEMES
                 </h1>
             </div>
-            <div className='flex flex-wrap gap-5 justify-around]'>
+            <div className='flex  items-center sm:flex-row justify-center  flex-wrap gap-5 justify-around]'>
                 {categories.map((item) => (
                     <CategoryBox 
                         key={item.label}

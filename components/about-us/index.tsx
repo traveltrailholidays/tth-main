@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Section from '../features/Section';
+import AboutContent from './about-content';
 
 
 const AboutSection = () => {
@@ -28,6 +29,7 @@ const AboutSection = () => {
                     </span>
                 </div>
             </div>
+            <AboutContent />
         </Section>
     )
 }

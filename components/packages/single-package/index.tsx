@@ -10,6 +10,7 @@ import FaqPackageAccordion from './faq-accordion';
 import { RiUserLine } from 'react-icons/ri';
 import { IoIosLink } from 'react-icons/io';
 import GetHelp from '@/components/get-help';
+import PackageQuotaion from './get-quotation';
 
 interface SinglePackageProps {
     reservations?: Reservation[];
@@ -100,46 +101,7 @@ const SinglePackage: React.FC<SinglePackageProps> = ({ reservations, listing, cu
                                     / per person
                                 </span>
                             </div>
-                            <form className='py-5 px-5 flex flex-col gap-6'>
-                                <h1 className='text-xl font-semibold ml-[2px]'>
-                                    Get Quote
-                                </h1>
-                                <div className='relative'>
-                                    <input 
-                                        type="text"
-                                        placeholder='Your name'
-                                        className='border-2 rounded py-2 px-10 w-full' 
-                                    />
-                                    <RiUserLine size={20} className='absolute top-1/2 -translate-y-1/2 left-3 text-gray-400 '/>
-                                </div>
-                                <div className='relative'>
-                                    <input 
-                                        type="text"
-                                        placeholder='Your email address'
-                                        className='border-2 rounded py-2 px-10 w-full' 
-                                    />
-                                    <MdAlternateEmail size={20} className='absolute top-1/2 -translate-y-1/2 left-3 text-gray-400 '/>
-                                </div>
-                                <div className='relative'>
-                                    <input 
-                                        type="text"
-                                        placeholder='Your Phone number'
-                                        className='border-2 rounded py-2 px-10 w-full' 
-                                    />
-                                    <MdLocalPhone size={20} className='absolute top-1/2 -translate-y-1/2 left-3 text-gray-400 '/>
-                                </div>
-                                <div className='relative'>
-                                    <input 
-                                        type="text"
-                                        placeholder='Package url'
-                                        className='border-2 rounded py-2 px-10 w-full' 
-                                    />
-                                    <IoIosLink size={20} className='absolute top-1/2 -translate-y-1/2 left-3 text-gray-400 '/>
-                                </div>
-                                <button className='bg-custom-clp rounded py-2 font-medium text-white'>
-                                    Submit
-                                </button>
-                            </form>
+                            <PackageQuotaion />
                         </div>
                         <GetHelp />
                     </div>
