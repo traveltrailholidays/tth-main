@@ -23,7 +23,7 @@ const AllPackages = async ({searchParams}: AllPackagesProps) => {
     }
 
     return (
-        <Section>
+        <Section className='mb-24'>
             <Container className='w-full flex flex-col md:flex-row gap-6 flex-wrap justify-center'>
                 {listings.map((listings: any) => {
                     return (

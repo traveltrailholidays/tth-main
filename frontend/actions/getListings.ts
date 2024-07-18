@@ -8,19 +8,25 @@ export interface IListingsParams {
 export default async function getListings(
     params: IListingsParams
 ) {
+
+    const { dest, category } = params;
+
+    let query: any = {};
+
+    if(dest) {
+        query.location = {
+            contains: dest, // Use contains for partial matching
+            mode: 'insensitive' // Optional: case insensitive search
+        };
+    }
+
+    if(category) {
+        query.category = category;
+    }
+
     try {
 
-        const { dest, category } = params;
-
-        let query: any = {};
-
-        if(dest) {
-            query.dest = dest;
-        }
-
-        if(category) {
-            query.category = category;
-        }
+       
 
         const listings = await prisma.listing.findMany({
             where: query,

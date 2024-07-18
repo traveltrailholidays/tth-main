@@ -18,7 +18,7 @@ const PackagesHeroSection = () => {
                 />
             </div>
             <Section>
-                <Container className='w-full relative'>
+                <Container className='w-full relative mb-10'>
                     <div className='absolute -top-[67px] bg-custom-sbl dark:bg-custom-sbd shadow dark:shadow-white/25 py-4 px-6 rounded-t-xl'>
                         <span className='font-semibold'>
                             Search for your desired tour package
