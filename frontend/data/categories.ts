@@ -1,5 +1,5 @@
-import { GiMountainRoad, GiSelfLove } from "react-icons/gi";
-import { MdTempleHindu } from "react-icons/md";
+import { GiBusStop, GiMountainRoad, GiPineTree, GiSelfLove } from "react-icons/gi";
+import { MdFamilyRestroom, MdTempleHindu } from "react-icons/md";
 
 export const categories = [
     {
@@ -10,66 +10,26 @@ export const categories = [
     {
         label: 'Religious',
         icon: MdTempleHindu,
-        description: 'This is a romantic package'
+        description: 'This is a religious package'
     },
     {
         label: 'Adventure',
         icon: GiMountainRoad,
-        description: 'This is a romantic package'
+        description: 'This is a adventure package'
     },
     {
         label: 'Family',
-        icon: GiMountainRoad,
+        icon: MdFamilyRestroom,
         description: 'This is a Family package'
     },
     {
-        label: 'Adventure',
-        icon: GiMountainRoad,
-        description: 'This is a romantic package'
+        label: 'Nature',
+        icon: GiPineTree,
+        description: 'This is a nature package'
     },
     {
-        label: 'Adventure',
-        icon: GiMountainRoad,
-        description: 'This is a romantic package'
-    },
-    {
-        label: 'Adventure',
-        icon: GiMountainRoad,
-        description: 'This is a romantic package'
-    },
-    {
-        label: 'Adventure',
-        icon: GiMountainRoad,
-        description: 'This is a romantic package'
-    },
-    {
-        label: 'Adventure',
-        icon: GiMountainRoad,
-        description: 'This is a romantic package'
-    },
-    {
-        label: 'Adventure',
-        icon: GiMountainRoad,
-        description: 'This is a romantic package'
-    },
-    {
-        label: 'Adventure',
-        icon: GiMountainRoad,
-        description: 'This is a romantic package'
-    },
-    {
-        label: 'Adventure',
-        icon: GiMountainRoad,
-        description: 'This is a romantic package'
-    },
-    {
-        label: 'Adventure',
-        icon: GiMountainRoad,
-        description: 'This is a romantic package'
-    },
-    {
-        label: 'Adventure',
-        icon: GiMountainRoad,
-        description: 'This is a romantic package'
+        label: 'Hill Station',
+        icon: GiBusStop,
+        description: 'This is a hill station package'
     },
 ];
